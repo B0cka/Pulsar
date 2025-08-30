@@ -10,6 +10,7 @@
     <packaging>pom</packaging>
     <modules>
         <module>Gateway</module>
+        <module>Processor</module>
     </modules>
 
     <parent>

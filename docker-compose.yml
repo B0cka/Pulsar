@@ -6,7 +6,7 @@ services:
       ZOOKEEPER_TICK_TIME: 2000
 
   kafka:
-    image: confluentinc/cp-kafka:7.3.0  # Версия 7.3.0 еще использует Zookeeper
+    image: confluentinc/cp-kafka:7.3.0
     depends_on:
       - zookeeper
     ports:
@@ -17,4 +17,3 @@ services:
       KAFKA_ADVERTISED_LISTENERS: PLAINTEXT://localhost:9092
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       KAFKA_AUTO_CREATE_TOPICS_ENABLE: 'true'
-      # Убираем все KRaft настройки!
