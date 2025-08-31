@@ -16,9 +16,8 @@ public class KafkaMessageConsumer {
 
     private final MessageRepository messageRepository;
 
-    // Теперь метод слушает сообщения типа KafkaMessage (а не MessageRequest)
     @KafkaListener(topics = "pulsar.messages", groupId = "pulsar-processor-group")
-    public void listen(KafkaMessage kafkaMessage) { // Принимаем KafkaMessage!
+    public void listen(KafkaMessage kafkaMessage) {
         log.info("Получил из Kafka: '{}', ID: {}", kafkaMessage.getText(), kafkaMessage.getMessageId());
 
         KafkaMessage entity = new KafkaMessage();
